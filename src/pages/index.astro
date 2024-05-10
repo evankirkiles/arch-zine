@@ -45,9 +45,10 @@ import Module2 from "@/zines/Module2.astro";
       </div>
       <div class="actions no-print">
         <button id="print">Print</button>
-        <a href="">View the Code</a>
-        <a href="">Sample: A4, Portrait</a>
-        <a href="">Sample: Letter, Landscape</a>
+        <a href="https://github.com/evankirkiles/arch-zine">View the Code</a>
+        <a href="/files/A4Portrait.pdf">Sample: A4, Portrait</a>
+        <a href="/files/A3Landscape.pdf">Sample: A3, Landscape</a>
+        <a href="/files/LetterLandscape.pdf">Sample: Letter, Landscape</a>
       </div>
     </div>
   </main>
@@ -115,6 +116,15 @@ import Module2 from "@/zines/Module2.astro";
 
     @media print {
       display: none;
+    }
+  }
+
+  #print {
+    background-color: #0000ff;
+    color: white;
+
+    &:hover {
+      background-color: black;
     }
   }
 </style>
