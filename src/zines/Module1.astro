@@ -1,0 +1,226 @@
+<article data-page style={{ backgroundColor: "white" }}>
+  <div data-page-zine="1">
+    <div class="number">1</div>
+    <h1>AN ABRIDGED<br />HISTORY OF PRINTING</h1>
+    <p>Printing from Mesopotamia to New York.</p>
+  </div>
+  <div data-page-zine="2">
+    <h2>3000 BCE — 500</h2>
+    <figure style="margin-block-end: auto;">
+      <img src="/img/module1/sealRot.jpg" data-media="print" />
+      <img src="/img/module1/seal.jpg" />
+      <figcaption>A cylinder seal and its impression</figcaption>
+    </figure>
+    <p style="margin-block-start: auto;">
+      The earliest known forms of printing were in Mesopotamia and China, where
+      <strong>cylinder seals</strong> and <strong>woodblocks</strong> were used to
+      imprint images on surfaces as early as 3000 BCE. Cylinder seals imprinted cuneiform
+      writing on clay, whereas woodblocks functioned like stamps for reproducing
+      scriptures and artistic images onto cloth like silk.
+    </p>
+  </div>
+  <div data-page-zine="3">
+    <h2>500 — 1100</h2>
+    <p style="margin-block-end: auto;">
+      By the second century CE, Chinese artisans began using woodblock printing
+      to reproduce texts and images.
+    </p>
+    <figure style="margin-block-end: auto;">
+      <img src="/img/module1/movableTypeRot.jpg" data-media="print" />
+      <img src="/img/module1/movableType.jpg" />
+      <figcaption>Movable type</figcaption>
+    </figure>
+    <p>
+      Woodblock printing remained dominant until the 11th century CE, when Bi
+      Sheng, a Chinese inventor, developed <strong>movable type</strong> using clay.
+      Korea later created metal movable type in the 13th century. Instead of having
+      to carve unique blocks for each page, movable type allowed for the reuse of
+      individual characters, making printing more efficient—though still tedious.
+    </p>
+  </div>
+  <div data-page-zine="4">
+    <h2>Circa 1440 – 1600</h2>
+    <figure style="margin-block-end: auto;">
+      <img src="/img/module1/gutenRot.jpg" data-media="print" />
+      <img src="/img/module1/guten.jpg" />
+      <figcaption>The Gutenberg Press</figcaption>
+    </figure>
+    <p>
+      Around 1440, Johannes Gutenberg revolutionized printing with the
+      popularization of a
+      <strong>mechanical movable-type printing press</strong>, which made mass
+      production of texts like the Gutenberg Bible possible. This set off the
+      printing revolution in Europe, standardizing languages and democratizing
+      access to knowledge. Compared to the Asian movable type, Gutenberg's
+      process was
+      <em>mechanical</em>, not manual, and could output up to 40 times as many
+      pages.
+    </p>
+  </div>
+  <div data-page-zine="5">
+    <h2>1800 – 1950</h2>
+    <p style="margin-block-end: auto;">
+      By the 19th century, the invention of <strong
+        >steam-powered printing presses</strong
+      > and the <strong>rotary press</strong> allowed for the mass production of
+      newspapers, periodicals, and books, making printed media even more affordable.
+      Literacy rates skyrocked as populations contended with this now accessible
+      deluge of information.
+    </p>
+    <figure style="margin-block-end: auto;">
+      <img src="/img/module1/steamRot.jpg" data-media="print" />
+      <img src="/img/module1/steam.jpg" />
+      <figcaption>A steam-powered printing press</figcaption>
+    </figure>
+  </div>
+  <div data-page-zine="6">
+    <h2>1900 - Present</h2>
+    <figure style="margin-block-start: auto;">
+      <img src="/img/module1/offsetRot.jpg" data-media="print" />
+      <img src="/img/module1/offset.jpg" />
+      <figcaption>Offset lithography, or offset printing</figcaption>
+    </figure>
+    <p>
+      The 20th century saw the rise of <strong>offset lithography</strong>—the
+      process of transferring ink from a plate to a rubber blanket before
+      printing—which soon became the dominant form of commercial printing as a
+      result of its efficiency and cost-effectiveness. At smaller scales, the
+      <strong>photocopier</strong> and <strong>risograph</strong> machine make printing
+      accessible to all.
+    </p>
+  </div>
+  <div data-page-zine="7">
+    <h2>Present</h2>
+    <p style="margin-block-end: auto;">
+      Today, the capabilities of computers and digital machines have made print
+      even easier. No longer is the letter-by-letter entry of movable type
+      required; instead, digital files laid out with computer programs can be
+      sent directly to a printer for automatic output with innovations like
+      laser printing.
+    </p>
+  </div>
+  <div data-page-zine="8">
+    <div class="number">1</div>
+    <section class="thought">
+      <h3>REFERENCES</h3>
+      <ol>
+        <li
+          ><a href="https://printinghistory.org/timeline/"
+            >https://printinghistory.org/timeline/</a
+          ></li
+        >
+        <li
+          ><a href="https://printinghistory.org/timeline/"
+            >https://printinghistory.org/timeline/</a
+          ></li
+        >
+      </ol>
+    </section>
+  </div>
+</article>
+
+<style lang="scss">
+  .number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    border: 10px solid currentColor;
+    border-radius: 100%;
+    padding-inline-end: 0.25rem;
+    padding-block-end: 0.5rem;
+    width: 10rem;
+    height: 10rem;
+    font-weight: 700;
+    font-size: 7rem;
+  }
+
+  h1 {
+    margin-block-end: 0;
+    font-size: 1.5rem;
+    line-height: 1.1;
+    font-family: Arial Narrow;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    opacity: 0.5;
+    margin-block: 0 0.5rem;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-align: center;
+  }
+
+  .circle {
+    margin: auto;
+    border: 1px solid currentColor;
+    border-radius: 100%;
+    aspect-ratio: 1;
+    inline-size: 60%;
+  }
+
+  div[data-page-zine] {
+    border: 10px solid currentColor;
+
+    & figure {
+      block-size: 40%;
+      text-align: center;
+    }
+  }
+
+  div[data-page-zine="3"] figure {
+    block-size: 25%;
+  }
+
+  div[data-page-zine="4"] figure {
+    block-size: 30%;
+  }
+
+  div[data-page-zine="6"] figure {
+    block-size: 40%;
+  }
+
+  figure img {
+    block-size: calc(100% - 1rem);
+  }
+
+  div[data-page-zine="8"] {
+    & > div {
+      transform: scaleX(-1);
+    }
+
+    & > p,
+    & > h1 {
+      visibility: hidden;
+    }
+  }
+
+  .thought {
+    margin-block-start: auto;
+    border: 1px solid currentColor;
+    padding: 0.5rem;
+    font-size: 0.7rem;
+    text-align: left;
+
+    & h3 {
+      color: currentColor;
+      font-weight: 700;
+      font-size: 1rem;
+      font-family: Arial Narrow;
+      text-transform: uppercase;
+    }
+  }
+
+  a:visited {
+    color: currentColor;
+  }
+
+  figure {
+    border: 1px solid black;
+    padding: 0.5rem;
+  }
+
+  img {
+    filter: saturate(0) contrast(2);
+  }
+</style>

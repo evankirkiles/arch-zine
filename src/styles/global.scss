@@ -1,0 +1,166 @@
+@use "sass:list";
+@import "./reset";
+@import "./typography";
+
+@page {
+  margin: 0;
+}
+
+:root {
+  --clr-border: rgba(0, 0, 0, 0.2);
+}
+
+body {
+  @media screen {
+    padding: 2rem;
+  }
+}
+
+main {
+  max-inline-size: 80ch;
+  font-size: 1.1rem;
+
+  @media print {
+    margin-block: auto;
+    padding: 2rem;
+    max-inline-size: 600px;
+  }
+
+  & h1 {
+    margin-block-end: 0.5rem;
+  }
+}
+
+article[data-page] {
+  display: flex;
+  overflow-x: scroll;
+  overscroll-behavior-inline: none;
+  font-size: 0.8rem;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media screen {
+    margin-block-end: 1rem;
+    border: 1px solid black;
+  }
+
+  @media print {
+    display: grid;
+    grid-template:
+      "p2 p1" 1fr
+      "p3 p8" 1fr
+      "p4 p7" 1fr
+      "p5 p6" 1fr / 1fr 1fr;
+    page-break-before: always;
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+div[data-page-zine] {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  padding: 1em;
+
+  @media screen {
+    border-inline-end: 1px solid var(--clr-border);
+    aspect-ratio: 0.707;
+    block-size: 420px;
+  }
+
+  @media print {
+    border-inline-start: 1px dashed var(--clr-border);
+    aspect-ratio: unset;
+    overflow: hidden;
+    writing-mode: vertical-rl;
+
+    $toFlip: 1, 8, 7, 6;
+    @for $i from 1 through 8 {
+      &[data-page-zine="#{$i}"] {
+        grid-area: p#{$i};
+
+        @if list.index($toFlip, $i) {
+          transform: rotate(180deg);
+          border-inline-start: none;
+          border-inline-end: 1px dashed var(--clr-border);
+          border-block-start: 1px dashed var(--clr-border);
+        }
+      }
+    }
+  }
+}
+
+article {
+  position: relative;
+  counter-reset: page;
+
+  & > div[data-page-zine="1"],
+  & > div[data-page-zine="8"] {
+    text-align: center;
+  }
+
+  & > div[data-page-zine] {
+    &:not([data-page-zine="1"]):not([data-page-zine="8"])::after {
+      counter-increment: page;
+      margin-block-start: 0.5rem;
+      content: "— " counter(page) " —";
+      text-align: center;
+    }
+  }
+}
+
+img {
+  display: block;
+
+  &[data-media="print"] {
+    display: none;
+  }
+
+  @media print {
+    display: none;
+    inline-size: 100%;
+    block-size: auto;
+
+    &[data-media="print"] {
+      display: block;
+    }
+  }
+}
+
+.no-print {
+  margin-block-end: 1rem;
+
+  @media print {
+    display: none;
+  }
+}
+
+.both-print {
+  display: block !important;
+}
+
+figure {
+  display: block;
+  margin: auto;
+
+  & img {
+    margin: auto;
+    inline-size: auto;
+    max-inline-size: 100%;
+    block-size: 100%;
+    object-fit: contain;
+  }
+
+  & figcaption {
+    margin-block-start: 0.25rem;
+    font-style: italic;
+    font-size: 0.7rem;
+  }
+}
+
+* {
+  word-wrap: break-word;
+}

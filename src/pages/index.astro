@@ -1,0 +1,120 @@
+---
+import RootLayout from "@/layouts/RootLayout.astro";
+import "@/styles/global.scss";
+import Binding from "@/zines/Binding.astro";
+import Module1 from "@/zines/Module1.astro";
+import Module2 from "@/zines/Module2.astro";
+---
+
+<RootLayout>
+  <main>
+    <h1>The Death of Print Media</h1>
+    <p>ARCH 346: Anthropology of Design<br />By Evan Kirkiles</p>
+    <div class="intro">
+      <div class="contents">
+        <p>
+          My final project for ARCH 346 is a design response exploring the
+          concept of the death of print media. The main body of the project is
+          less the content in the zines than the CSS layout framework seen on
+          this page that allows printing zine impositions directly from the
+          browser. The goal is to straddle the line between digital and print
+          publishing, creating a unified format that can exist both on the web
+          and in printable book form without additional labor.
+        </p>
+        <p
+          >Since the inception of digital publishing, print publishing has been
+          in decline. This project investigates a technical manner by which
+          print and digital might be merged in a democratic, distributable
+          manner. Naturally, I do not expect to match the massive featureset of
+          an enterprise tool like InDesign—rather, I envision this project as a
+          zine publishing framework. Zines have historically been produced by
+          communities with minimal resources and a DIY attitude, for which the
+          portability of a website-based typesetting program would be quite
+          useful.</p
+        >
+        <hr />
+        <h2 class="instruct">Instructions</h2>
+        <p
+          >For best print output results, please use either Chrome or Firefox.
+          Enable backgrounds, but disable headers and footers. Pick any page
+          size or orientation you wish and the framework will attempt to morph
+          its content to match. Sample outputs can be found on the right.</p
+        >
+        <p>To fold and assemble the zines, follow the below guide:</p>
+        <img src="/img/binding/zineMaker.jpeg" class="guide both-print" />
+      </div>
+      <div class="actions no-print">
+        <button id="print">Print</button>
+        <a href="">View the Code</a>
+        <a href="">Sample: A4, Portrait</a>
+        <a href="">Sample: Letter, Landscape</a>
+      </div>
+    </div>
+  </main>
+  <h2 class="no-print">[0] Introduction</h2>
+  <Binding />
+  <h2 class="no-print">[1] An Abridged History of Printing</h2>
+  <Module1 />
+  <h2 class="no-print">[2] Print Media Is Dying</h2>
+  <Module2 />
+</RootLayout>
+
+<script>
+  const printButton = document.querySelector<HTMLButtonElement>("#print");
+  printButton?.addEventListener("click", () => window.print());
+</script>
+
+<style lang="scss">
+  .intro {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-block-start: 1rem;
+  }
+
+  .instruct {
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
+
+  .contents {
+    flex: 100;
+    min-inline-size: min(100%, 500px);
+  }
+
+  hr {
+    margin-block: 1rem;
+  }
+
+  .guide {
+    inline-size: 100%;
+    block-size: auto;
+  }
+
+  .actions {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-inline-size: 28ch;
+
+    & > * {
+      display: block;
+      border: 1px solid currentColor;
+      padding: 0.5rem 2rem;
+      inline-size: 100%;
+      color: black;
+      text-align: center;
+      text-decoration: none;
+
+      &:hover {
+        background-color: black;
+        color: white;
+      }
+    }
+
+    @media print {
+      display: none;
+    }
+  }
+</style>

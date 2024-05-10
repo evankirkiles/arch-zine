@@ -1,0 +1,148 @@
+<article data-page>
+  <div data-page-zine="1">
+    <div class="circle"></div>
+    <hgroup>
+      <p>ARCH 346: Anthropology of Design</p>
+      <h1>The Death of Print Media</h1>
+      <div>Evan Kirkiles, Spring 2024</div>
+    </hgroup>
+  </div>
+  <div data-page-zine="2">
+    <p
+      >This compilation of zines is a capstone design response for ARCH 346:
+      Anthropology of Design. It encompasses two topics under the umbrella title
+      of "The Death of Print Media":
+    </p>
+    <ol>
+      <li>An Abridged History of Printing</li>
+      <li>Print Media is Dying</li>
+    </ol>
+    <p style="margin-block-start: auto;"
+      >Importantly, these zines were designed entirely with HTML and CSS,
+      printable directly from the website they are distributed on. Each is an
+      8-up zine, functioning as bite-sized, digestable pamphlets on their
+      topics.
+    </p>
+  </div>
+  <div data-page-zine="3">
+    <p
+      >Unlike expensive, enterprise-built design software like InDesign, the
+      languages of HTML and CSS—as open source standards—defy traditional
+      monetary boundaries. Every computer-wielding person has access to these
+      tools—and the free nature of the web means distribution of web-print zines
+      also comes at zero cost. This zine itself can be printed directly from its
+      webpage.</p
+    >
+    <p
+      >With this set of zines as example, I hope to provide a basic, democratic
+      framework for simple 8-page zine layout with HTML and CSS.
+    </p>
+    <img src="/img/binding/zineMakerRot.jpeg" data-media="print" />
+    <img src="/img/binding/zineMaker.jpeg" />
+  </div>
+  <div data-page-zine="4">
+    <p style="margin-block-end: auto"
+      >In keeping with the open nature of the Web, the code used for building
+      the zines in this manner is entirely public. Future work will be done to
+      adapt the HTML and CSS framework to support larger signatures beyond the
+      simple 8-page single-sided spread.</p
+    >
+    <p
+      >Much of the inspiration for this project comes from prior work in
+      web-to-print projects like Paul Soulellis's Printed Web.
+    </p>
+  </div>
+  <div data-page-zine="5">
+    <p style="margin-block-end: auto"
+      >These zines benefit from a design language like CSS in that they have no
+      fixed dimensionality or aspect ratio. They can be printed in portrait
+      orientation or landscape orientation, on A4 or Letter, to no degradation
+      in layout (as content length allows).
+    </p>
+    <img src="/img/binding/pagesRot.jpg" data-media="print" />
+    <img src="/img/binding/pages.webp" />
+  </div>
+  <div data-page-zine="6">
+    <p>Feel free to distribute by any channel you wish: </p>
+    <ul style="margin-block-end: auto">
+      <li
+        >Embed a zine on your page with an <code>{"<iframe >"}</code> HTML tag</li
+      >
+      <li>Print a zine and leave it at your library</li>
+      <li>Share a link to the source code</li>
+      <li>Leave unassembled pages lying around</li>
+    </ul>
+    <p
+      >Beyond engagement, help keep print media alive. Buy a book or a
+      newspaper.</p
+    >
+  </div>
+  <div data-page-zine="7">
+    <p style="margin-block-end: auto"
+      >Many thanks to the instructors of this course:
+    </p>
+    <ol>
+      <li>Prof. Viyajanthi Rao</li>
+      <li>TA: Nabil</li>
+    </ol>
+  </div>
+  <div data-page-zine="8">
+    <div class="circle"></div>
+    <hgroup>
+      <p>ARCH 346: Anthropology of Design</p>
+      <h1>The Death of Print Media</h1>
+      <div>Evan Kirkiles, Spring 2024</div>
+    </hgroup>
+  </div>
+</article>
+
+<style lang="scss">
+  hgroup > p {
+    margin-block-end: 0.15rem;
+  }
+
+  h1 {
+    margin-block-end: 0;
+    font-size: 1.3rem;
+    line-height: 1.1;
+    font-family: Arial Narrow;
+    text-transform: uppercase;
+  }
+
+  .circle {
+    margin: auto;
+    border: 1px solid currentColor;
+    border-radius: 100%;
+    aspect-ratio: 1;
+    inline-size: 60%;
+  }
+
+  article {
+    counter-reset: page;
+  }
+
+  div[data-page-zine] {
+    &:not([data-page-zine="1"]):not([data-page-zine="8"])::after {
+      counter-increment: page;
+      margin-block-start: 0.5rem;
+      content: "— " counter(page) " —";
+      text-align: center;
+    }
+  }
+
+  div[data-page-zine="1"] {
+    text-align: center;
+  }
+
+  div[data-page-zine="8"] {
+    & > hgroup {
+      visibility: hidden;
+    }
+  }
+
+  div[data-page-zine="3"] {
+    & img {
+      margin-block-start: auto;
+    }
+  }
+</style>
